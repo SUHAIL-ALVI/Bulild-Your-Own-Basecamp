@@ -1,0 +1,22 @@
+{
+  "name": "own_basecamp",
+  "version": "1.0.0",
+  "description": "Major project of learning web development",
+  "keywords": [
+    "Udemy Node",
+    "our",
+    "own",
+    "base",
+    "camp"
+  ],
+  "license": "ISC",
+  "author": "Suhail alvi",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}
