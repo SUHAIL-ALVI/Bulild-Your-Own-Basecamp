@@ -1,0 +1,34 @@
+import express from "express";
+import cors from "cors";
+
+
+const app = express()
+
+//Basic Configurations
+app.use(express.json())
+app.use(express.urlencoded({ extended: true })) // to support URL-encoded bodies
+app.use(express.static("public")) // to serve static files such as images, CSS files, and JavaScript files
+
+
+//app configurations
+app.use(cors({
+    origin: process.env.CORS_ORIGIN?.split(",") || "http://localhost:5173",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}))
+
+
+//import the routes
+
+import healthcheckRoutes from "./routes/healthcheck.routes.js"
+
+
+app.use("/api/v1/healthcheck", healthcheckRoutes)
+
+app.get("/", (req, res) => {
+    res.send("This is basecamp home page")
+})
+
+
+export default app;
