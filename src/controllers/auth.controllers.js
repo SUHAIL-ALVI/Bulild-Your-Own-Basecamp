@@ -5,7 +5,7 @@ import { asyncHandler } from "../utils/async-handler.js"
 import { emailVerificationMailgenContent, sendEmail } from "../utils/mail.js"
 
 
-
+//generate access and refresh token
 const generateAccessAndRefreshTokens = async (userId) => {
     try {
         const user = await User.findById(userId) //find user by id
