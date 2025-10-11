@@ -287,5 +287,6 @@ export {
   login, 
   logoutUser,
   verifyEmail,
-  resendEmailVerification
+  resendEmailVerification,
+  refreshAccesToken
 };
