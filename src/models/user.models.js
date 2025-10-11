@@ -34,7 +34,7 @@ const userSchema = new Schema({
         type: String,
         trim: true,
     },
-    pasaword: {
+    password: {
         type: String,
         require: [true, "Password is required"],
     },
@@ -62,18 +62,22 @@ const userSchema = new Schema({
 
 // Pre-save hook to hash password before saving to DB
 userSchema.pre("save", async function(next) {
-    if(!this.isModified("pasaword")) return next()
-        
-    this.pasaword = await bcrypt.hash(this.pasaword, 10)
-    next()
-})
+    if (!this.isModified("password")) return next();
+    
+    this.password = await bcrypt.hash(this.password, 10); // corrected
+    next();
+});
 
 
 
 // Instance method to compare password for login
-userSchema.methods.isPasswordCorrect = async function(password) {
-    return await bcrypt.compare(password, this.password)
+userSchema.methods.isPasswordCorrect = async function (password) {
+  if (!password || !this.password) {
+    return false; // prevent bcrypt error
+  }
+  return await bcrypt.compare(password, this.password);
 };
+
 
 userSchema.methods.generateAccessToken = function() {
     return jwt.sign(

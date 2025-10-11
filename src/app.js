@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-
+import cookieParser from "cookie-parser";
 
 const app = express()
 
@@ -8,7 +8,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })) // to support URL-encoded bodies
 app.use(express.static("public")) // to serve static files such as images, CSS files, and JavaScript files
-
+app.use(cookieParser());
 
 //app configurations
 app.use(cors({
