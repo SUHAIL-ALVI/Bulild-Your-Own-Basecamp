@@ -23,3 +23,6 @@ router.route("/change-password").post( verifyJWT, userChangeCurrentPasswordValid
 router.route("/resend-email-verification").post( verifyJWT, resendEmailVerification );
 
 export default router
+
+
+//Half of the target is completed rest will be work on it 
