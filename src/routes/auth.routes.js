@@ -18,5 +18,6 @@ router.route("/reset-password:resetToken").post(userResetForgotPassword(), valid
 
 //secure routes
 router.route("/logout").post( verifyJWT, logoutUser );
+router.route("/current-user").post( verifyJWT, getCurren );
 
 export default router
