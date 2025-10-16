@@ -1,5 +1,5 @@
 ﻿# Bulild Your Own Basecamp 🔐
-
+ 
 This project is a robust authentication service designed to handle user registration, login, and secure access to protected resources. It provides a comprehensive solution for managing user identities, verifying credentials, and issuing JSON Web Tokens (JWTs) for secure authentication. The service also includes features for email verification, password reset, and user profile management, ensuring a secure and user-friendly experience.
 
 ## 🚀 Key Features
@@ -160,6 +160,7 @@ This project is licensed under the [MIT License](LICENSE).
 ## 💖 Thanks 
 
 Thank you for checking out this authentication service! We hope it helps you build secure and reliable applications.
+
 
 
 
